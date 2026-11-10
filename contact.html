@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Riverbend City Park Guide: trails, events and visitor information.">
+  <title>Contact | Riverbend City Park</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <img src="logo.png" alt="Riverbend City Park logo: a green pine tree under a yellow sun inside a round badge" width="44" height="44">
+        <span>Riverbend City Park</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="site-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="trails.html">Trails</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-intro">
+      <h1>Contact the park</h1>
+      <p class="lede">Want to book a picnic shelter, join a volunteer day or report a fallen branch? Send us a message and a ranger will reply within two working days.</p>
+      <div class="contact-wrap">
+        <form class="contact-form" action="https://formsubmit.co/khiara.clayne.torres@adamson.edu.ph" method="POST">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required placeholder="e.g. Maya Santos" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="topic">What is this about?</label>
+            <select id="topic" name="topic">
+              <option value="question">General question</option>
+              <option value="shelter">Picnic shelter booking</option>
+              <option value="event">Event sign-up</option>
+              <option value="volunteer">Volunteering</option>
+              <option value="report">Report a problem</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" placeholder="Tell us what you need, including the date and place if it matters."></textarea>
+          </div>
+          <button class="btn" type="submit">Send message</button>
+          <p class="form-note">Name and email are required. This class project sends you to a thank-you page;
+          connect the form's <code>action</code> to a real service such as Formspree to receive messages.</p>
+        </form>
+        <aside class="contact-info" aria-label="Park details">
+          <h2>Find us</h2>
+          <ul>
+            <li><strong>Address:</strong> 1 Meadow Gate Road (main entrance, Gate A)</li>
+            <li><strong>Email:</strong> <a href="mailto:hello@riverbendpark.example">hello@riverbendpark.example</a></li>
+            <li><strong>Park:</strong> daily, 6:00 to 21:00</li>
+            <li><strong>Visitor Centre:</strong> Tue to Sun, 9:00 to 17:00</li>
+            <li><strong>Emergency:</strong> call your local emergency number first, then tell a ranger.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <section>
+        <h2>Find the park</h2>
+        <address>
+          Riverbend City Park<br>
+          1 Meadow Gate Road<br>
+          <a href="mailto:hello@riverbendpark.example">hello@riverbendpark.example</a>
+        </address>
+      </section>
+      <section>
+        <h2>Opening times</h2>
+        <ul>
+          <li>Park: daily 6:00 to 21:00</li>
+          <li>Visitor Centre: Tue to Sun, 9:00 to 17:00</li>
+          <li>Visitor Centre: closed Mondays</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="trails.html">Trails</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </section>
+      <p>&copy; 2026 Riverbend City Park Guide. A student final project; all text and images are original.</p>
+    </div>
+  </footer>
+</body>
+</html>

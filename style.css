@@ -1,0 +1,189 @@
+/* Riverbend City Park Guide - hand-written CSS, no frameworks */
+:root{
+  --pine:#1d3b2f;
+  --fern:#2f6b43;
+  --leaf:#8fb339;
+  --mist:#e9f0ea;
+  --snow:#fbfdfa;
+  --sun:#f4c542;
+  --bark:#5a4636;
+  --water:#25758a;
+  --ink:#1c2a24;
+  --muted:#53655b;
+  --line:#c5d5ca;
+  --radius:6px;
+  --font-head:Rockwell,'Roboto Slab','Rockwell Nova',Georgia,serif;
+  --font-body:'Segoe UI',Candara,Verdana,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--mist);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--fern);text-underline-offset:3px}
+a:hover{color:var(--water);text-decoration-thickness:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:3px solid var(--sun);outline-offset:2px;box-shadow:0 0 0 5px var(--pine)}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--sun);color:var(--pine);
+  padding:.6rem 1rem;font-weight:700;z-index:100}
+.skip-link:focus{left:0}
+
+/* ---------- header and nav (flexbox) ---------- */
+.site-header{background:var(--pine);border-bottom:4px solid var(--sun);position:sticky;top:0;z-index:10}
+.header-inner{max-width:1100px;margin:0 auto;padding:.7rem 1rem;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:.6rem}
+.logo{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--snow);
+  font-family:var(--font-head);font-size:1.25rem;font-weight:700}
+.logo:hover{color:var(--sun)}
+.logo img{width:44px;height:44px}
+.site-nav{display:flex;flex-wrap:wrap;gap:.25rem;list-style:none}
+.site-nav a{display:block;padding:.5rem .9rem;color:var(--snow);text-decoration:none;
+  font-weight:600;border-radius:var(--radius);border-bottom:3px solid transparent}
+.site-nav a:hover{background:var(--fern);color:#fff;border-bottom-color:var(--leaf)}
+.site-nav a[aria-current="page"]{background:var(--sun);color:var(--pine);border-bottom-color:var(--sun)}
+
+/* ---------- layout helpers ---------- */
+main{max-width:1100px;margin:0 auto;padding:0 1rem 1rem}
+section{margin:2.8rem 0}
+h1,h2,h3{font-family:var(--font-head);color:var(--pine);line-height:1.2}
+h1{font-size:clamp(2rem,6vw,3.2rem);margin-bottom:.8rem}
+h2{font-size:clamp(1.45rem,3.2vw,1.9rem);margin-bottom:1rem;padding-left:.8rem;border-left:6px solid var(--leaf)}
+h3{font-size:1.25rem;margin-bottom:.4rem}
+p{max-width:68ch}
+p+p{margin-top:.8rem}
+.lede{font-size:1.1rem;color:var(--muted);margin-bottom:1rem}
+.page-intro{margin-top:2.2rem}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-block;background:var(--sun);color:var(--pine);text-decoration:none;font-weight:700;
+  padding:.8rem 1.5rem;border:2px solid var(--sun);border-radius:var(--radius);cursor:pointer;
+  font-size:1rem;font-family:var(--font-body)}
+.btn:hover{background:var(--pine);color:var(--sun);border-color:var(--sun)}
+.btn-ghost{background:transparent;color:var(--snow);border-color:var(--snow)}
+.btn-ghost:hover{background:var(--snow);color:var(--pine);border-color:var(--snow)}
+.btn-row{display:flex;flex-wrap:wrap;gap:.8rem}
+
+/* ---------- hero (grid) ---------- */
+.hero{display:grid;grid-template-columns:1fr;background:var(--pine);color:var(--snow);
+  margin:0 -1rem 2.8rem}
+.hero-copy{padding:2rem 1.2rem 2.2rem;display:flex;flex-direction:column;gap:1.1rem;justify-content:center}
+.hero h1{color:var(--snow);margin:0}
+.hero p{color:#dbe8de;font-size:1.1rem}
+.trail-sign{border:3px solid var(--sun);border-radius:var(--radius);padding:.7rem 1rem;width:fit-content;
+  background:rgba(244,197,66,.1)}
+.trail-sign strong{color:var(--sun);font-family:var(--font-head);font-size:1.15rem;display:block}
+.hero img{width:100%;height:260px;object-fit:cover}
+
+/* ---------- quick facts (grid) ---------- */
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line);
+  border:2px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.facts div{background:var(--snow);padding:1rem}
+.facts dt{font-size:.85rem;color:var(--muted);font-weight:600}
+.facts dd{font-family:var(--font-head);font-weight:700;color:var(--pine);font-size:1.1rem}
+
+/* ---------- signpost links ---------- */
+.ways{display:grid;grid-template-columns:1fr;gap:1rem;list-style:none}
+.way{display:flex;flex-direction:column;gap:.4rem;height:100%;background:var(--snow);
+  border:2px solid var(--line);border-left:8px solid var(--fern);border-radius:var(--radius);
+  padding:1.2rem;text-decoration:none;color:var(--ink)}
+.way h3{color:var(--pine)}
+.way span{color:var(--fern);font-weight:700;margin-top:auto}
+.way:hover{background:#fff;border-color:var(--water);border-left-color:var(--sun);color:var(--ink)}
+
+/* ---------- figures / split ---------- */
+.split{display:grid;grid-template-columns:1fr;gap:1.6rem;align-items:center}
+figure{margin:0}
+figure img{border-radius:var(--radius);border:2px solid var(--line)}
+figcaption{font-size:.9rem;color:var(--muted);padding:.55rem .2rem 0}
+.tips{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-top:1rem}
+.tips li{padding-left:1.6rem;position:relative}
+.tips li::before{content:"";position:absolute;left:0;top:.55em;width:.8rem;height:.8rem;
+  background:var(--leaf);border-radius:50% 0 50% 0}
+
+/* ---------- trails page ---------- */
+.table-wrap{overflow-x:auto;border:2px solid var(--line);border-radius:var(--radius);background:var(--snow)}
+table{border-collapse:collapse;width:100%;min-width:560px}
+caption{text-align:left;padding:.8rem 1rem;font-weight:700;color:var(--muted)}
+th,td{text-align:left;padding:.75rem 1rem;border-top:1px solid var(--line)}
+thead th{background:var(--pine);color:var(--snow);border-top:none}
+tbody th{font-family:var(--font-head);color:var(--pine)}
+tbody tr:hover{background:var(--mist)}
+.stack{display:flex;flex-direction:column;gap:1.5rem}
+.trail{display:grid;grid-template-columns:1fr;background:var(--snow);border:2px solid var(--line);
+  border-radius:var(--radius);overflow:hidden}
+.trail img{width:100%;height:210px;object-fit:cover}
+.trail-body{padding:1.2rem}
+.meta{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0}
+.meta li{background:var(--mist);border:1px solid var(--line);border-radius:999px;padding:.2rem .8rem;
+  font-size:.88rem;font-weight:600;color:var(--pine)}
+
+/* ---------- events page ---------- */
+.event-list{list-style:none;display:flex;flex-direction:column;gap:1.2rem}
+.event{display:grid;grid-template-columns:78px 1fr;gap:1rem;background:var(--snow);
+  border:2px solid var(--line);border-radius:var(--radius);padding:1rem}
+.event img{grid-column:1/-1;width:100%;height:170px;object-fit:cover;border-radius:var(--radius)}
+.date-badge{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:var(--pine);color:var(--snow);border-radius:var(--radius);height:84px;
+  border-bottom:5px solid var(--sun);text-align:center}
+.date-badge .mon{font-size:.85rem;font-weight:700;color:var(--sun)}
+.date-badge .day{font-family:var(--font-head);font-size:1.8rem;font-weight:700;line-height:1}
+.event .when{font-weight:700;color:var(--fern)}
+audio{width:100%;margin-top:.8rem}
+
+/* ---------- contact page ---------- */
+.contact-wrap{display:grid;grid-template-columns:1fr;gap:1.6rem;align-items:start}
+.contact-form{display:flex;flex-direction:column;gap:1.1rem;background:var(--snow);
+  border:2px solid var(--line);border-radius:var(--radius);padding:1.4rem}
+.field{display:flex;flex-direction:column;gap:.35rem}
+.field label{font-weight:700;color:var(--pine)}
+.field input,.field select,.field textarea{font:inherit;padding:.75rem .9rem;border:2px solid var(--line);
+  border-radius:var(--radius);background:#fff;color:var(--ink);width:100%}
+.field input:hover,.field select:hover,.field textarea:hover{border-color:var(--fern)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--water);
+  outline:3px solid var(--sun);outline-offset:1px;box-shadow:none}
+.field textarea{min-height:140px;resize:vertical}
+.form-note{font-size:.88rem;color:var(--muted)}
+.contact-info{background:var(--pine);color:var(--snow);border-radius:var(--radius);padding:1.4rem}
+.contact-info h2{color:var(--snow);border-left-color:var(--sun)}
+.contact-info ul{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.contact-info a{color:var(--sun)}
+.contact-info a:hover{color:#fff}
+
+/* ---------- footer (flexbox) ---------- */
+.site-footer{background:var(--pine);color:#dbe8de;margin-top:3rem;border-top:4px solid var(--sun)}
+.footer-inner{max-width:1100px;margin:0 auto;padding:2rem 1rem;display:flex;flex-wrap:wrap;
+  gap:1.5rem 2.5rem;justify-content:space-between;align-items:flex-start}
+.site-footer section{margin:0}
+.site-footer h2{color:var(--snow);font-size:1.1rem;border:none;padding:0;margin-bottom:.5rem}
+.site-footer ul{list-style:none;display:flex;flex-direction:column;gap:.3rem}
+.site-footer a{color:var(--sun)}
+.site-footer a:hover{color:#fff}
+.footer-inner p{font-size:.85rem;flex-basis:100%;color:#b9cbbf}
+address{font-style:normal}
+
+/* ---------- tablet breakpoint ---------- */
+@media (min-width:640px){
+  .facts{grid-template-columns:repeat(4,1fr)}
+  .ways{grid-template-columns:repeat(3,1fr)}
+  .split{grid-template-columns:1fr 1fr}
+  .trail{grid-template-columns:260px 1fr}
+  .trail img{height:100%;min-height:210px}
+  .event{grid-template-columns:84px 1fr 220px;align-items:center}
+  .event img{grid-column:auto;height:140px}
+  .contact-wrap{grid-template-columns:1.4fr 1fr}
+}
+
+/* ---------- desktop breakpoint ---------- */
+@media (min-width:1000px){
+  .hero{grid-template-columns:5fr 6fr;min-height:520px;margin:0 0 2.8rem;border-radius:var(--radius);overflow:hidden}
+  .hero-copy{padding:3rem 3rem}
+  .hero img{height:100%}
+  .trail{grid-template-columns:340px 1fr}
+  .event{grid-template-columns:96px 1fr 280px}
+  .event img{height:160px}
+}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---------- small utilities ---------- */
+.wide-img{max-height:280px;width:100%;object-fit:cover;margin-top:1rem}
+.mt{margin-top:1.2rem}
